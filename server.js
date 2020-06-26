@@ -1,8 +1,11 @@
 const express    = require('express'),
       bodyParser = require('body-parser'),
-      app        = express();
+      app        = express(),
+      bcrypt     = require('bcrypt-nodejs'),
+      cors       = require('cors');
 
 app.use(bodyParser.json())
+app.use(cors());
 
 const database = {
     users: [
@@ -36,7 +39,6 @@ app.post('/signin', (req, res)=>{
         } else {
             res.status(400).json('error logging in');
         }
-    res.json('signin working');
 })
 
 app.post('/register', (req, res)=>{
