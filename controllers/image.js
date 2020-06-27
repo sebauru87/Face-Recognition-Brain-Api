@@ -4,7 +4,7 @@ const dotenv   = require('dotenv');
 dotenv.config();
 
 const app = new Clarifai.App({
-  apiKey: process.env.REACT_APP_Face_Detect_Api,
+  apiKey: process.env.REACT_APP_FACE_DETECT_API,
 });
 
 const handleApiCall = (req, res) => {
